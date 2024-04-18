@@ -1,0 +1,166 @@
+
+:root {
+  --card-width: 125px;
+  --card-height: 175px;
+}
+
+body {
+  margin: 0;
+  background: url(img/background.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: rgb(0,0,0);
+  font-family: "Teko", sans-serif;
+  text-shadow: 1px 1px 3px rgb(255, 255, 255);
+  min-height: 100vh;
+  width: 100%;
+}
+
+h1 {
+  font-size: 65px;
+  text-align: center;
+}
+
+#ui-container {
+  text-align: center;
+}
+
+#ui-container h3 {
+  margin: 0;
+  display: inline-block;
+  font-size: 40px;
+  text-align: center;
+}
+
+#ui-container h3:first-child {
+  margin-right: 40px;
+}
+
+#card-container {
+  font-size: 0;
+  margin: 50px auto;
+  width: calc((var(--card-width) + 2vw + 12px) * 4);
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  margin: 1vw;
+  width: var(--card-width);
+  height: var(--card-height);
+  border: 2px solid transparent;  
+  overflow: hidden;
+}
+
+/* Style the two logo images themselves. */
+.card-down,
+.card-up {
+  /* Take images out of the flow. */
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  /* When facing away from the screen each image should be hidden. */
+  backface-visibility: hidden;
+  border-radius: 5px;
+  transition-duration: .3s;
+}
+
+.card-down {
+  background-image: url(img/cardbackground.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.card-up {
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.flipped .card-down {
+  transform: rotateY(180deg);
+}
+
+.flipped .card-up {
+  transform: rotateY(0deg);
+}
+
+.image-1 .card-up {
+  background-image: url(img/octanecard.jpg), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-2 .card-up {
+  background-image: url(img/lobacard.jpg), linear-gradient(#72dbf4, #72dbf4);
+  background-position: right;
+}
+
+.image-3 .card-up {
+  background-image: url(img/revenantcard.jpg), linear-gradient(#72dbf4, #72dbf4);
+  background-position: right;
+}
+
+.image-4 .card-up {
+  background-image: url(img/wattsoncard.jpg), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-5 .card-up {
+  background-image: url(img/wraithcard.jpg), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-6 .card-up {
+  background-image: url(img/cryptocard.jpg), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.glow {
+    border: 3px solid transparent;    
+    transition: border 0.1s linear, box-shadow 0.1s linear;
+}
+
+
+@keyframes border-glow {
+  from {
+    border: 2px solid transparent;   
+    box-shadow: none;
+
+  }
+
+  80% {
+    border-color: red;
+    box-shadow: 0 0 10px red;
+  }
+
+  to {
+    border: 2px solid transparent;   
+    box-shadow: none;
+  }
+}
+
+.border-glow {
+  animation: border-glow 1s;
+  border-radius: 5px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.reset-btn {
+  margin: 0 0 30px 0;
+  padding: 20px 40px;
+  background-color: black;
+  color: white;
+  border: 0px;
+  border-radius: 10px;
+  font-family: "Teko", sans-serif;
+  font-size: 1.5em;
+}
+
+.reset-btn:hover {
+  cursor: pointer;
+  background-color: #181818;
+  animation: border-glow 2s;
+}
